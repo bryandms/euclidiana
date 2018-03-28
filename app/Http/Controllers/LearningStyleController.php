@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Algorithm;
+use Session;
 
 class LearningStyleController extends Controller
 {
@@ -13,53 +14,105 @@ class LearningStyleController extends Controller
      */
     public function styles()
     {
-        $ec = [
-            'Discerniendo',
-            'Receptivamente',
-            'Sintiendo',
-            'Aceptando',
-            'Intuitivamente',
-            'Abstracto',
-            'Orientado al presente ',
-            'Aprendo más de la experiencia ',
-            'Emotivo'
-        ];
-    
-        $or = [
-            'Ensayando',
-            'Relacionando',
-            'Observando',
-            'Arriesgando',
-            'Productivamente',
-            'Observando',
-            'Reflexivamente',
-            'Aprendo más de la observacion',
-            'Reservado'
-        ];
-    
-        $ca = [
-            'Involucrándome',
-            'Analíticamente',
-            'Pensando',
-            'Evaluando',
-            'Lógicamente',
-            'Concreto',
-            'Orientado hacia el futuro ',
-            'Aprendo más de la conceptualización ',
-            'Racional'
-        ];
+        if (Session::get('lang') == 'en') {
+            // English
+            $ec = [
+                'Discerning',
+                'Receptively',
+                'Feeling',
+                'Accepting',
+                'Intuitively',
+                'Abstract',
+                'Oriented to the present',
+                'I learn more from experience',
+                'Emotional'
+            ];
+
+            $or = [
+                'Rehearsing',
+                'Relating',
+                'Observing',
+                'Risking',
+                'Productively',
+                'Observing',
+                'Reflexively',
+                'I learn more from observation',
+                'Reserved'
+            ];
+
+            $ca = [
+                'Involving me',
+                'Analytically',
+                'Thinking',
+                'Evaluating',
+                'Logically',
+                'Concrete',
+                'Oriented towards the future',
+                'I learn more about conceptualization',
+                'Rational'
+            ];
+
+            $ea = [
+                'Practicing',
+                'Impartially',
+                'Doing',
+                'With caution',
+                'Questioning',
+                'Active',
+                'Pragmatic',
+                'I learn more from experimentation',
+                'Open'
+            ];
+        } else {
+            // Spanish
+            $ec = [
+                'Discerniendo',
+                'Receptivamente',
+                'Sintiendo',
+                'Aceptando',
+                'Intuitivamente',
+                'Abstracto',
+                'Orientado al presente ',
+                'Aprendo más de la experiencia ',
+                'Emotivo'
+            ];
         
-        $ea = [
-            'Practicando',
-            'Imparcialmente',
-            'Haciendo',
-            'Con cautela',
-            'Cuestionando',
-            'Activo',
-            'Pragmático',
-            'Aprendo más de la experimentación',
-            'Abierto'
-        ];
+            $or = [
+                'Ensayando',
+                'Relacionando',
+                'Observando',
+                'Arriesgando',
+                'Productivamente',
+                'Observando',
+                'Reflexivamente',
+                'Aprendo más de la observacion',
+                'Reservado'
+            ];
+        
+            $ca = [
+                'Involucrándome',
+                'Analíticamente',
+                'Pensando',
+                'Evaluando',
+                'Lógicamente',
+                'Concreto',
+                'Orientado hacia el futuro ',
+                'Aprendo más de la conceptualización ',
+                'Racional'
+            ];
+            
+            $ea = [
+                'Practicando',
+                'Imparcialmente',
+                'Haciendo',
+                'Con cautela',
+                'Cuestionando',
+                'Activo',
+                'Pragmático',
+                'Aprendo más de la experimentación',
+                'Abierto'
+            ];
+        }
     
         return view('/styles', ['ec' => $ec, 'or' => $or, 'ca' => $ca, 'ea' => $ea]);
     }

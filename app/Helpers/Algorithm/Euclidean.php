@@ -67,33 +67,30 @@ class Euclidean
   {
     switch ($string)
     {
+      case 'Beginner':
+      case 'DM':
       case 'F':
-        return 1;
-        
-      case 'M':
-        return 2;
-
       case 'Paraiso':
-        return 1;
-      
-      case 'Turrialba':
-        return 2;
-
       case 'Low':
-        return 1;
-
-      case 'Medium':
-        return 2;
-      
-      case 'High':
-        return 3;
-
+      case 'L':
+      case 'N':
       case 'CONVERGENTE':
         return 1;
-
+      
+      case 'Intermediate':
+      case 'ND':
+      case 'M':
+      case 'Turrialba':
+      case 'Medium':
       case 'DIVERGENTE':
         return 2;
-      
+
+      case 'Advanced':
+      case 'O':
+      case 'NA':
+      case 'High':
+      case 'H':
+      case 'S':
       case 'ACOMODADOR':
         return 3;
       

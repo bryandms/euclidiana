@@ -108,11 +108,11 @@ function validateAverage() {
   error = $('#average').val();
 
   if (error == "")
-    return errorMessage('Este campo es requerido.');
+    return errorMessage('This field is required. / Este campo es requerido.');
   else if (!error.match(/^[+]?[0-9]+([.][0-9]{1,2})?$/))
-    return errorMessage('Debe cumplir el formato "##.##".');
+    return errorMessage('It must comply with the format "##. ##". / Debe cumplir el formato "##.##".');
   else if ( !(error >= 0 && error <= 10) )
-    return errorMessage('Debe estar en el rango de 0 a 10.');
+    return errorMessage('It should be in the range of 0 to 10. / Debe estar en el rango de 0 a 10.');
 
   $('#average').removeClass('border border-danger');
   $('#error').empty();

@@ -6,25 +6,38 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('home') }}">Inicio</a>
+        <a class="nav-link" href="{{ route('home') }}">@lang('app.home.title')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('styles') }}">Estilos</a>
+        <a class="nav-link" href="{{ route('styles') }}">@lang('app.styles')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('campus') }}">Recinto</a>
+        <a class="nav-link" href="{{ route('campus') }}">@lang('app.campus')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('gender') }}">Sexo</a>
+        <a class="nav-link" href="{{ route('gender') }}">@lang('app.gender')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('style') }}">Estilo de aprendizaje</a>
+        <a class="nav-link" href="{{ route('style') }}">@lang('app.learningStyle')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('professor') }}">Tipo de profesor</a>
+        <a class="nav-link" href="{{ route('professor') }}">@lang('app.professorType')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('network') }}">Clase de red</a>
+        <a class="nav-link" href="{{ route('network') }}">@lang('app.networkClass')</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          @if (Session::get('lang') == "es")
+            Español
+          @else
+            English
+          @endif
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{ url('lang', ['en']) }}">@lang('app.en')</a>
+          <a class="dropdown-item" href="{{ url('lang', ['es']) }}">@lang('app.es')</a>
+        </div>
       </li>
     </ul>
   </div>

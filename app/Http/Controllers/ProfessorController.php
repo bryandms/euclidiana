@@ -38,11 +38,10 @@ class ProfessorController extends Controller
         $skills_using_pc = $request->input('F');
         $skills_using_web_tech = $request->input('G');
         $skills_using_web_sites = $request->input('H');
-        $type = $request->input('type');
 
         $vectorX = [
             $age, $gender, $experience, $course_times, $discipline, $skills_using_pc,
-            $skills_using_web_tech, $skills_using_web_sites, $type
+            $skills_using_web_tech, $skills_using_web_sites
         ];
 
         return Algorithm::euclidean($vectorX, $networks);

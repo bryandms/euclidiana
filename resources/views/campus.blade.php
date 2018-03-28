@@ -6,17 +6,18 @@
   <div class="row">
     <div class="card col-12">
       <div class="card-body">
-        <h3>Recinto</h3>
+        <h3>@lang('app.campus')</h3>
         <div class="separator-alt"></div>
-        <h5>Instrucciones</h5>
-        <p>Se pretende identificar el recinto de origen del estudiante (Paraíso o Turrialba). Para esto debe elegir su estilo de aprendizaje, su último promedio para matrícula y su sexo.</p>
+        <h5>@lang('app.instructions')</h5>
+        <p>@lang('app.campusPage.descr')</p>
         <div class="alert alert-info animated zoomInDown" role="alert">
           <div class="media">
               <i class="fas fa-info-circle fa-3x align-self-center mr-3"></i>
             <div class="media-body">
-              <h5 class="mt-0">Información</h5>
-              <p class="mb-0">Si no conoce su estilo de estilo de aprendizaje puede 
-                realizar el test <a href="{{ route('styles') }}">aquí</a>.
+              <h5 class="mt-0">@lang('app.information.title')</h5>
+              <p class="mb-0">
+                @lang('app.information.descr')
+                <a href="{{ route('styles') }}">@lang('app.information.link')</a>.
               </p>
             </div>
           </div>
@@ -27,31 +28,31 @@
             <div class="card-body">
               <form id="campusForm">
                 <div class="form-group">
-                  <label for="style">Estilo de aprendizaje</label>
+                  <label for="style">@lang('app.learningStyle')</label>
                   <select class="form-control" id="style" name="style">
-                    <option value="1" selected>Convergente</option>
-                    <option value="2">Divergente</option>
-                    <option value="3">Acomodador</option>
-                    <option value="4">Asimilador</option>
+                    <option value="1" selected>@lang('app.converging')</option>
+                    <option value="2">@lang('app.diverging')</option>
+                    <option value="3">@lang('app.accommodating')</option>
+                    <option value="4">@lang('app.assimilating')</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="average">Promedio para matrícula</label>
+                  <label for="average">@lang('app.average')</label>
                   <input type="text" class="form-control" id="average" name="average" placeholder="6.0"/>
                   <small id="error" class="form-text text-danger"></small>
                 </div>
                 <div class="form-group">
-                    <label for="gender">Sexo</label>
+                    <label for="gender">@lang('app.gender')</label>
                     <select class="form-control" id="gender" name="gender">
-                      <option value="1" selected>Femenino</option>
-                      <option value="2">Masculino</option>
+                      <option value="1" selected>@lang('app.female')</option>
+                      <option value="2">@lang('app.male')</option>
                     </select>
                 </div>
                 <div class="col-12 d-flex justify-content-center mt-3">
-                  <button type="button" onclick="campus();" class="btn btn-dark btn-sm">Calcular</button>
+                  <button type="button" onclick="campus();" class="btn btn-dark btn-sm">@lang('app.calculate')</button>
                 </div>
               </form>
-              <h4 id="result" class="mt-3">Tu recinto de origen es: 
+              <h4 id="result" class="mt-3">@lang('app.campusPage.result')
                 <span class="badge badge-info text-uppercase"></span>
               </h4>
             </div>

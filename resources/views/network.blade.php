@@ -6,26 +6,26 @@
   <div class="row">
     <div class="card col-12">
       <div class="card-body">
-        <h3>Clase de red</h3>
+        <h3>@lang('app.networkClass')</h3>
         <div class="separator-alt"></div>
-        <h5>Instrucciones</h5>
-        <p>Se pretende identificar la clase a la que pertenece una red (A/B). Para esto debe elegir las caracteísticas de la red.</p>
+        <h5>@lang('app.instructions')</h5>
+        <p>@lang('app.networkPage.descr')</p>
         <hr>
         <div class="row">
           <div class="card col-8 mx-auto bg-light">
             <div class="card-body">
               <form id="networkForm">
                 <div class="form-group">
-                  <label for="reliability">Confibialidad</label>
+                  <label for="reliability">@lang('app.networkPage.reliability')</label>
                   <select class="form-control" id="reliability" name="reliability">
-                    <option value="2" selected>Baja</option>
-                    <option value="3">Media</option>
-                    <option value="4">Alta</option>
-                    <option value="5">Muy alta</option>
+                    <option value="2" selected>@lang('app.low')</option>
+                    <option value="3">@lang('app.averageO')</option>
+                    <option value="4">@lang('app.high')</option>
+                    <option value="5">@lang('app.veryHigh')</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="net_links">Número de enlaces</label>
+                  <label for="net_links">@lang('app.networkPage.netLinks')</label>
                   <select class="form-control" id="net_links" name="net_links">
                     <option value="7" selected>7</option>
                     <option value="8">8</option>
@@ -44,26 +44,26 @@
                   </select>
                 </div>
                 <div class="form-group">
-                    <label for="capacity">Capacidad</label>
+                    <label for="capacity">@lang('app.networkPage.capacity')</label>
                     <select class="form-control" id="capacity" name="capacity">
-                      <option value="1" selected>Baja</option>
-                      <option value="2">Media</option>
-                      <option value="3">Alta</option>
+                      <option value="1" selected>@lang('app.low')</option>
+                      <option value="2">@lang('app.averageO')</option>
+                      <option value="3">@lang('app.high')</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="cost">Costo</label>
+                    <label for="cost">@lang('app.networkPage.cost')</label>
                     <select class="form-control" id="cost" name="cost">
-                      <option value="1" selected>Bajo</option>
-                      <option value="2">Medio</option>
-                      <option value="3">Alto</option>
+                      <option value="1" selected>@lang('app.low')</option>
+                      <option value="2">@lang('app.averageO')</option>
+                      <option value="3">@lang('app.high')</option>
                     </select>
                 </div>
                 <div class="col-12 d-flex justify-content-center mt-3">
-                  <button type="button" onclick="network();" class="btn btn-dark btn-sm">Calcular</button>
+                  <button type="button" onclick="network();" class="btn btn-dark btn-sm">@lang('app.calculate')</button>
                 </div>
               </form>
-              <h4 id="result" class="mt-3">La clase de la red es: 
+              <h4 id="result" class="mt-3">@lang('app.networkPage.result')
                 <span class="badge badge-info text-uppercase"></span>
               </h4>
             </div>

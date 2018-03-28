@@ -11,41 +11,54 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/home');
-})->name('home');
+Route::group(['middleware' => ['web']], function () {
+    
+    // ----------------------------- Home Routes ------------------------------
+    Route::get('/', function () {
+        return view('/home');
+    })->name('home');
 
-// ------------------------ Learning Styles Routes ------------------------
-Route::get('/styles', 'LearningStyleController@styles')
-    ->name('styles');
+    // ------------------------ Learning Styles Routes ------------------------
+    Route::get('/styles', 'LearningStyleController@styles')
+        ->name('styles');
 
-Route::post('/styles', 'LearningStyleController@getStyles');
+    Route::post('/styles', 'LearningStyleController@getStyles');
 
-Route::get('/style', 'LearningStyleController@style')
-    ->name('style');
+    Route::get('/style', 'LearningStyleController@style')
+        ->name('style');
 
-Route::post('/style', 'LearningStyleController@getStyle');
+    Route::post('/style', 'LearningStyleController@getStyle');
 
-// ---------------------------- Campus Routes -----------------------------
-Route::get('/campus', 'StudentController@campus')
-    ->name('campus');
+    // ---------------------------- Campus Routes -----------------------------
+    Route::get('/campus', 'StudentController@campus')
+        ->name('campus');
 
-Route::post('/campus', 'StudentController@getCampus');
+    Route::post('/campus', 'StudentController@getCampus');
 
-// ---------------------------- Gender Routes -----------------------------
-Route::get('/gender', 'StudentController@gender')
-    ->name('gender');
+    // ---------------------------- Gender Routes -----------------------------
+    Route::get('/gender', 'StudentController@gender')
+        ->name('gender');
 
-Route::post('/gender', 'StudentController@getGender');
+    Route::post('/gender', 'StudentController@getGender');
 
-// --------------------------- Professor Routes ---------------------------
-Route::get('/professor', 'ProfessorController@professor')
-    ->name('professor');
+    // --------------------------- Professor Routes ---------------------------
+    Route::get('/professor', 'ProfessorController@professor')
+        ->name('professor');
 
-Route::post('/professor', 'ProfessorController@getProfessor');
+    Route::post('/professor', 'ProfessorController@getProfessor');
 
-// ---------------------------- Network Routes ----------------------------
-Route::get('/network', 'NetworkController@network')
-    ->name('network');
+    // ---------------------------- Network Routes ----------------------------
+    Route::get('/network', 'NetworkController@network')
+        ->name('network');
 
-Route::post('/network', 'NetworkController@getNetwork');
+    Route::post('/network', 'NetworkController@getNetwork');
+
+    // --------------------- Internationalization Routes ----------------------
+    Route::get('lang/{lang}', function ($lang) {
+        session(['lang' => $lang]);
+        return \Redirect::back();
+    })->where([
+        'lang' => 'en|es'
+    ]);
+
+});

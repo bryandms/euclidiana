@@ -6,11 +6,11 @@
   <div class="row">
     <div class="card col-12">
       <div class="card-body">
-        <h3>Estilo de aprendizaje</h3>
+        <h3>@lang('app.learningStyle')</h3>
         <div class="separator-alt"></div>
-        <h5>Instrucciones</h5>
-        <p>Debe conceder una calificación alta a aquellas palabras que mejor caracterizan la forma en que usted aprende, y una calificación baja a las palabras que menos caracterizan su estilo de aprendizaje.</p>
-        <p>De inmediato encontrará nueve series o líneas de cuatro palabras cada una. Ordene de mayor a menor cada serie o juego de cuatro palabras que hay en cada línea, ubicando 4 en la palabra que mejor caracteriza su estilo de aprendizaje, un 3 en la palabra siguiente en cuanto a la correspondencia con su estilo; a la siguiente un 2, y un 1 a la palabra que menos caracteriza su estilo. Tenga cuidado de ubicar un número distinto al lado de cada palabra en la misma línea. </p>
+        <h5>@lang('app.instructions')</h5>
+        <p>@lang('app.stylesPage.descr1')</p>
+        <p>@lang('app.stylesPage.descr2')</p>
         <hr>
         <form id="stylesForm" class="row">
           <!-- First Column EC -->
@@ -58,10 +58,10 @@
             </div>
           </div>
           <div class="col-12 d-flex justify-content-center mt-3">
-            <button type="button" onclick="learningStyles();" class="btn btn-dark btn-sm">Calcular</button>
+            <button type="button" onclick="learningStyles();" class="btn btn-dark btn-sm">@lang('app.calculate')</button>
           </div>
         </form>
-        <h4 id="result" class="mt-3">Tu estilo de aprendizaje es: 
+        <h4 id="result" class="mt-3">@lang('app.stylesPage.result')
           <span class="badge badge-info text-uppercase"></span>
         </h4>
       </div>
