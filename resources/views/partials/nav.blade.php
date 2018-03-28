@@ -28,10 +28,10 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          @if (Session::get('lang') == "es")
-            Español
-          @else
+          @if (Session::get('lang') == "en")
             English
+          @else
+            Español
           @endif
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
