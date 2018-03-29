@@ -1,6 +1,6 @@
 @extends('partials.layout')
 
-@section('title', 'Estilo de aprendizaje del estudiante')
+@section('title', Lang::get('app.learningStyle'))
 
 @section('content')
   <div class="row">

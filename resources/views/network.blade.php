@@ -1,6 +1,6 @@
 @extends('partials.layout')
 
-@section('title', 'Clase de red')
+@section('title', Lang::get('app.networkClass'))
 
 @section('content')
   <div class="row">
