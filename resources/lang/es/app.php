@@ -29,11 +29,11 @@ return [
   'low' => 'Bajas',
   'high' => 'Altas',
   'veryHigh' => 'Muy altas',
-  'sometimes' => 'Aveces',
+  'sometimes' => 'A veces',
   'often' => 'A menudo',
   'averageO' => 'Promedias',
   'diverging' => 'Divergente',
-  'assimilating' => 'Assimilador',
+  'assimilating' => 'Asimilador',
   'converging' => 'Convergente',
   'accommodating' => 'Acomodador',
 
