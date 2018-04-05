@@ -31,6 +31,9 @@ function validate() {
     
     if (sum != 10) {
       $('#error').append('<div class="alert alert-danger" role="alert"><i class="fas fa-exclamation-triangle"></i> Check that the lines of four words have different values. Revise que las líneas de cuatro palabras tengan valores diferentes.</div>');
+      targetTop = $("#error").offset().top - 70;
+      $('body,html').animate({scrollTop : targetTop}, 500);
+      
       return false;
     }
   }
@@ -120,6 +123,8 @@ function ajaxRequest(url, data) {
       $("#loader").hide();
       $('#result').show();
       $('#result').children('span').text(data);
+      targetTop = $("#result").offset().top - 70;
+      $('body,html').animate({scrollTop : targetTop}, 500);
     }
   });
 }
