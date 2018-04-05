@@ -17,7 +17,6 @@ class Euclidean
    */
   public static function euclidean($vectorX, $vectorY)
   {
-    $sum = 0;
     $min = $result = 1000;
 
     foreach($vectorY as $current)

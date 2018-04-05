@@ -1,15 +1,40 @@
 /**
- * Sums the values of the style form and make the ajax request 
- * to show the result of the learning style.
+ * Sums the values of the style form and make the ajax request
+ * to show the learning style result if the data is correct,
+ * if it does not show an error message.
  */
 function learningStyles() {
-  ec = sumValuesColumn('ec', [2, 3, 4, 5, 7, 8]);
-  or = sumValuesColumn('or', [1, 3, 6, 7, 8, 9]);
-  ca = sumValuesColumn('ca', [2, 3, 4, 5, 8, 9]);
-  ea = sumValuesColumn('ea', [1, 3, 6, 7, 8, 9]);
+  if ( validate() ) {
+    ec = sumValuesColumn('ec', [2, 3, 4, 5, 7, 8]);
+    or = sumValuesColumn('or', [1, 3, 6, 7, 8, 9]);
+    ca = sumValuesColumn('ca', [2, 3, 4, 5, 8, 9]);
+    ea = sumValuesColumn('ea', [1, 3, 6, 7, 8, 9]);
 
-  data = { "ec": ec, "or": or, "ca": ca, "ea": ea };
-  ajaxRequest('/styles', data);
+    data = { "ec": ec, "or": or, "ca": ca, "ea": ea };
+    ajaxRequest('/styles', data);
+  }
+}
+
+/**
+ * Validate that the values assigned to the form rows are correct.
+ * @return {boolean} Indicates that there is an error.
+ */
+function validate() {
+  $('#error').empty();
+  $('#result').hide();
+
+  for (let i = 9; i >= 1; i--) {
+    sum = parseInt($(`#ec${i}`).val()) +
+          parseInt($(`#or${i}`).val()) +
+          parseInt($(`#ca${i}`).val()) +
+          parseInt($(`#ea${i}`).val());
+    
+    if (sum != 10) {
+      $('#error').append('<div class="alert alert-danger" role="alert"><i class="fas fa-exclamation-triangle"></i> Check that the lines of four words have different values. Revise que las líneas de cuatro palabras tengan valores diferentes.</div>');
+      return false;
+    }
+  }
+  return true;
 }
 
 /**

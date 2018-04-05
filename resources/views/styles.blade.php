@@ -11,6 +11,7 @@
         <h5>@lang('app.instructions')</h5>
         <p>@lang('app.stylesPage.descr1')</p>
         <p>@lang('app.stylesPage.descr2')</p>
+        <div id="error"></div>
         <hr>
         <form id="stylesForm" class="row">
           <!-- First Column EC -->
