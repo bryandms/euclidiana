@@ -14,7 +14,8 @@
             <div class="card text-center bg-light">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <i class="fas fa-book fa-2x mb-2"></i><br>@lang('app.styles')
+                  <i class="fas fa-book fa-2x mb-2"></i><br>
+                  <a class="home-link" href="{{ route('styles') }}">@lang('app.styles')</a>
                 </h5>
                 <div class="separator"></div>
                 <h6 class="card-subtitle my-2 text-muted">@lang('app.stylesDescr')</h6>
@@ -26,7 +27,8 @@
             <div class="card text-center bg-light">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <i class="fas fa-building fa-2x mb-2"></i><br>@lang('app.campus')
+                  <i class="fas fa-building fa-2x mb-2"></i><br>
+                  <a class="home-link" href="{{ route('campus') }}">@lang('app.campus')</a>
                 </h5>
                 <div class="separator"></div>
                 <h6 class="card-subtitle my-2 text-muted">@lang('app.campusDescr')</h6>
@@ -38,7 +40,8 @@
             <div class="card text-center bg-light">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <i class="fas fa-transgender fa-2x mb-2"></i><br>@lang('app.gender')
+                  <i class="fas fa-transgender fa-2x mb-2"></i><br>
+                  <a class="home-link" href="{{ route('gender') }}">@lang('app.gender')</a>
                 </h5>
                 <div class="separator"></div>
                 <h6 class="card-subtitle my-2 text-muted">@lang('app.genderDescr')</h6>
@@ -50,7 +53,8 @@
             <div class="card text-center bg-light">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <i class="fas fa-graduation-cap fa-2x mb-2"></i><br>@lang('app.learningStyle')
+                  <i class="fas fa-graduation-cap fa-2x mb-2"></i><br>
+                  <a class="home-link" href="{{ route('style') }}">@lang('app.learningStyle')</a>
                 </h5>
                 <div class="separator"></div>
                 <h6 class="card-subtitle my-2 text-muted">@lang('app.learningStyleDescr')</h6>
@@ -62,7 +66,8 @@
             <div class="card text-center bg-light">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <i class="fas fa-user fa-2x mb-2"></i><br>@lang('app.professorType')
+                  <i class="fas fa-user fa-2x mb-2"></i><br>
+                  <a class="home-link" href="{{ route('professor') }}">@lang('app.professorType')</a>
                 </h5>
                 <div class="separator"></div>
                 <h6 class="card-subtitle my-2 text-muted">@lang('app.professorTypeDescr')</h6>
@@ -74,7 +79,8 @@
             <div class="card text-center bg-light">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <i class="fas fa-cloud fa-2x mb-2"></i><br>@lang('app.networkClass')
+                  <i class="fas fa-cloud fa-2x mb-2"></i><br>
+                  <a class="home-link" href="{{ route('network') }}">@lang('app.networkClass')</a>
                 </h5>
                 <div class="separator"></div>
                 <h6 class="card-subtitle my-2 text-muted">@lang('app.networkClassDescr')</h6>

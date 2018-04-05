@@ -10,6 +10,15 @@ html {
   color: rgba(255, 255, 255, 0.7);
 }
 
+a.home-link {
+  text-decoration: none;
+  color: #343a40;
+}
+
+a.home-link:hover {
+  color: #000000;
+}
+
 .separator {
   position: relative;
   width: 6px;
