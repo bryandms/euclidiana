@@ -32,7 +32,7 @@ class Euclidean
       $value = sqrt($value);
 
       if($min == 0)
-        break;
+        return end($current);
       else
         if($min > $value) {
           $min = $value;
