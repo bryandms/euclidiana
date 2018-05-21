@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Algorithm;
+use Euclidean;
 
 class StudentController extends Controller
 {
@@ -41,7 +41,7 @@ class StudentController extends Controller
 
         $vectorX = [$style, $average, $gender];
 
-        return Algorithm::euclidean($vectorX, $students);
+        return Euclidean::euclidean($vectorX, $students);
     }
 
     /**
@@ -60,7 +60,7 @@ class StudentController extends Controller
         $average = $request->input('average');
 
         $vectorX = [$style, $campus, $average];
-        $gender = Algorithm::euclidean($vectorX, $students);
+        $gender = Euclidean::euclidean($vectorX, $students);
 
         return ($gender == "M")? "Masculino": "Femenino";
     }

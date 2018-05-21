@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Algorithm;
+use Euclidean;
 use Session;
 
 class LearningStyleController extends Controller
@@ -143,7 +143,7 @@ class LearningStyleController extends Controller
 
         $vectorX = [$ec, $or, $ca, $ea];
 
-        return Algorithm::euclidean($vectorX, $styles);
+        return Euclidean::euclidean($vectorX, $styles);
     }
 
     /**
@@ -163,6 +163,6 @@ class LearningStyleController extends Controller
 
         $vectorX = [$campus, $gender, $average];
 
-        return Algorithm::euclidean($vectorX, $styles);
+        return Euclidean::euclidean($vectorX, $styles);
     }
 }

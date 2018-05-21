@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Algorithm;
+use Euclidean;
+use NaiveBayes;
+// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
+// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
+// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
+// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
+// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
 
 class ProfessorController extends Controller
 {
@@ -44,6 +50,6 @@ class ProfessorController extends Controller
             $skills_using_web_tech, $skills_using_web_sites
         ];
 
-        return Algorithm::euclidean($vectorX, $networks);
+        return Euclidean::euclidean($vectorX, $networks);
     }
 }

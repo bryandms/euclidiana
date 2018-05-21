@@ -26,7 +26,7 @@ class Euclidean
 
       for($i = count($vectorX) - 1; $i >= 0; $i--)
       {
-        $value += pow( (double)$vectorX[$i] - Euclidean::strValue($current[$i]), 2 );
+        $value += pow( Euclidean::strValue($vectorX[$i]) - Euclidean::strValue($current[$i]), 2 );
       }
 
       $value = sqrt($value);
@@ -73,12 +73,15 @@ class Euclidean
       case 'Low':
       case 'L':
       case 'N':
+      case 'B':
       case 'CONVERGENTE':
         return 1;
       
       case 'Intermediate':
       case 'ND':
       case 'M':
+      case 'I':
+      case 'S':
       case 'Turrialba':
       case 'Medium':
       case 'DIVERGENTE':
@@ -89,7 +92,7 @@ class Euclidean
       case 'NA':
       case 'High':
       case 'H':
-      case 'S':
+      case 'A':
       case 'ACOMODADOR':
         return 3;
       

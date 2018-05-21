@@ -18,15 +18,15 @@
                 <div class="form-group">
                   <label for="campus">@lang('app.campus')</label>
                   <select class="form-control" id="campus" name="campus">
-                    <option value="1" selected>Paraíso</option>
-                    <option value="2">Turrialba</option>
+                    <option value="Paraiso" selected>Paraíso</option>
+                    <option value="Turrialba">Turrialba</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="gender">@lang('app.gender')</label>
                   <select class="form-control" id="gender" name="gender">
-                    <option value="1" selected>@lang('app.female')</option>
-                    <option value="2">@lang('app.male')</option>
+                    <option value="F" selected>@lang('app.female')</option>
+                    <option value="M">@lang('app.male')</option>
                   </select>
                 </div>
                 <div class="form-group">

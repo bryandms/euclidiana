@@ -46,17 +46,17 @@
                 <div class="form-group">
                     <label for="capacity">@lang('app.networkPage.capacity')</label>
                     <select class="form-control" id="capacity" name="capacity">
-                      <option value="1" selected>@lang('app.low')</option>
-                      <option value="2">@lang('app.averageO')</option>
-                      <option value="3">@lang('app.high')</option>
+                      <option value="Low" selected>@lang('app.low')</option>
+                      <option value="Medium">@lang('app.averageO')</option>
+                      <option value="High">@lang('app.high')</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="cost">@lang('app.networkPage.cost')</label>
                     <select class="form-control" id="cost" name="cost">
-                      <option value="1" selected>@lang('app.low')</option>
-                      <option value="2">@lang('app.averageO')</option>
-                      <option value="3">@lang('app.high')</option>
+                      <option value="Low" selected>@lang('app.low')</option>
+                      <option value="Medium">@lang('app.averageO')</option>
+                      <option value="High">@lang('app.high')</option>
                     </select>
                 </div>
                 <div class="col-12 d-flex justify-content-center mt-3">

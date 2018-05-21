@@ -214,7 +214,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Algorithm' => App\Helpers\Algorithm\Euclidean::class,
+        'Euclidean' => App\Helpers\Algorithm\Euclidean::class,
+        'NaiveBayes' => App\Helpers\Algorithm\NaiveBayes::class,
 
     ],
 

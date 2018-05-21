@@ -30,17 +30,17 @@
                 <div class="form-group">
                   <label for="style">@lang('app.learningStyle')</label>
                   <select class="form-control" id="style" name="style">
-                    <option value="1" selected>@lang('app.converging')</option>
-                    <option value="2">@lang('app.diverging')</option>
-                    <option value="3">@lang('app.accommodating')</option>
-                    <option value="4">@lang('app.assimilating')</option>
+                    <option value="CONVERGENTE" selected>@lang('app.converging')</option>
+                    <option value="DIVERGENTE">@lang('app.diverging')</option>
+                    <option value="ACOMODADOR">@lang('app.accommodating')</option>
+                    <option value="ASIMILADOR">@lang('app.assimilating')</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="campus">@lang('app.campus')</label>
                   <select class="form-control" id="campus" name="campus">
-                    <option value="1" selected="">Paraíso</option>
-                    <option value="2">Turrialba</option>
+                    <option value="Paraiso" selected="">Paraíso</option>
+                    <option value="Turrialba">Turrialba</option>
                   </select>
                 </div>
                 <div class="form-group">

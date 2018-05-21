@@ -30,10 +30,10 @@
                 <div class="form-group">
                   <label for="style">@lang('app.learningStyle')</label>
                   <select class="form-control" id="style" name="style">
-                    <option value="1" selected>@lang('app.converging')</option>
-                    <option value="2">@lang('app.diverging')</option>
-                    <option value="3">@lang('app.accommodating')</option>
-                    <option value="4">@lang('app.assimilating')</option>
+                    <option value="CONVERGENTE" selected>@lang('app.converging')</option>
+                    <option value="DIVERGENTE">@lang('app.diverging')</option>
+                    <option value="ACOMODADOR">@lang('app.accommodating')</option>
+                    <option value="ASIMILADOR">@lang('app.assimilating')</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -44,8 +44,8 @@
                 <div class="form-group">
                     <label for="gender">@lang('app.gender')</label>
                     <select class="form-control" id="gender" name="gender">
-                      <option value="1" selected>@lang('app.female')</option>
-                      <option value="2">@lang('app.male')</option>
+                      <option value="F" selected>@lang('app.female')</option>
+                      <option value="M">@lang('app.male')</option>
                     </select>
                 </div>
                 <div class="col-12 d-flex justify-content-center mt-3">

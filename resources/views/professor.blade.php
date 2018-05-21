@@ -27,17 +27,17 @@
                   <div class="form-group">
                     <label for="B">@lang('app.professorPage.B')</label>
                     <select class="form-control" id="B" name="B">
-                      <option value="1" selected>@lang('app.female')</option>
-                      <option value="2">@lang('app.male')</option>
-                      <option value="3">N/A</option>
+                      <option value="F" selected>@lang('app.female')</option>
+                      <option value="M">@lang('app.male')</option>
+                      <option value="NA">N/A</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="C">@lang('app.professorPage.C')</label>
                     <select class="form-control" id="C" name="C">
-                      <option value="1" selected>@lang('app.beginner')</option>
-                      <option value="2">@lang('app.intermediate')</option>
-                      <option value="3">@lang('app.advanced')</option>
+                      <option value="B" selected>@lang('app.beginner')</option>
+                      <option value="I">@lang('app.intermediate')</option>
+                      <option value="A">@lang('app.advanced')</option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -53,33 +53,33 @@
                   <div class="form-group">
                     <label for="E">@lang('app.professorPage.E')</label>
                     <select class="form-control" id="E" name="E">
-                      <option value="1" selected>@lang('app.professorPage.dm')</option>
-                      <option value="2">@lang('app.professorPage.nd')</option>
-                      <option value="3">@lang('app.professorPage.o')</option>
+                      <option value="DM" selected>@lang('app.professorPage.dm')</option>
+                      <option value="ND">@lang('app.professorPage.nd')</option>
+                      <option value="O">@lang('app.professorPage.o')</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="F">@lang('app.professorPage.F')</label>
                     <select class="form-control" id="F" name="F">
-                      <option value="1" selected>@lang('app.low')</option>
-                      <option value="2">@lang('app.averageO')</option>
-                      <option value="3">@lang('app.high')</option>
+                      <option value="L" selected>@lang('app.low')</option>
+                      <option value="I">@lang('app.averageO')</option>
+                      <option value="H">@lang('app.high')</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="G">@lang('app.professorPage.G')</label>
                     <select class="form-control" id="G" name="G">
-                      <option value="1" selected>@lang('app.never')</option>
-                      <option value="2">@lang('app.sometimes')</option>
-                      <option value="3">@lang('app.often')</option>
+                      <option value="N" selected>@lang('app.never')</option>
+                      <option value="S">@lang('app.sometimes')</option>
+                      <option value="O">@lang('app.often')</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="H">@lang('app.professorPage.H')</label>
                     <select class="form-control" id="H" name="H">
-                      <option value="1" selected>@lang('app.never')</option>
-                      <option value="2">@lang('app.sometimes')</option>
-                      <option value="3">@lang('app.often')</option>
+                      <option value="N" selected>@lang('app.never')</option>
+                      <option value="S">@lang('app.sometimes')</option>
+                      <option value="O">@lang('app.often')</option>
                     </select>
                   </div>
                 </div>

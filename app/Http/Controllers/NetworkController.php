@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Algorithm;
+use Euclidean;
 
 class NetworkController extends Controller
 {
@@ -35,6 +35,6 @@ class NetworkController extends Controller
 
         $vectorX = [$reliability, $net_links, $capacity, $cost];
 
-        return Algorithm::euclidean($vectorX, $networks);
+        return Euclidean::euclidean($vectorX, $networks);
     }
 }
