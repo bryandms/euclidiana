@@ -27,6 +27,7 @@
           <div class="card col-8 mx-auto bg-light">
             <div class="card-body">
               <form id="genderForm">
+                @include('/partials/algorithm-selector')
                 <div class="form-group">
                   <label for="style">@lang('app.learningStyle')</label>
                   <select class="form-control" id="style" name="style">

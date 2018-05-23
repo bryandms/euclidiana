@@ -15,6 +15,7 @@
           <div class="card col-8 mx-auto bg-light">
             <div class="card-body">
               <form id="styleForm">
+                @include('/partials/algorithm-selector')
                 <div class="form-group">
                   <label for="campus">@lang('app.campus')</label>
                   <select class="form-control" id="campus" name="campus">

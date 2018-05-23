@@ -15,6 +15,9 @@
           <div class="card col-12 bg-light">
             <div class="card-body">
               <form id="professorForm" class="row">
+                <div class="col-12">
+                  @include('/partials/algorithm-selector')
+                </div>
                 <div class="col-12 col-md-6">
                   <div class="form-group">
                     <label for="A">@lang('app.professorPage.A')</label>

@@ -14,6 +14,9 @@
         <div id="error"></div>
         <hr>
         <form id="stylesForm" class="row">
+          <div class="col-12">
+            @include('/partials/algorithm-selector')
+          </div>
           <!-- First Column EC -->
           <div class="col-12 col-md-3">
             <div class="card bg-light">

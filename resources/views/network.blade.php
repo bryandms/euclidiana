@@ -15,6 +15,7 @@
           <div class="card col-8 mx-auto bg-light">
             <div class="card-body">
               <form id="networkForm">
+                @include('/partials/algorithm-selector')
                 <div class="form-group">
                   <label for="reliability">@lang('app.networkPage.reliability')</label>
                   <select class="form-control" id="reliability" name="reliability">

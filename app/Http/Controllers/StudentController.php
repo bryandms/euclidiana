@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Euclidean;
+use NaiveBayes;
 
 class StudentController extends Controller
 {
@@ -38,10 +39,14 @@ class StudentController extends Controller
         $style = $request->input('style');
         $average = $request->input('average');
         $gender = $request->input('gender');
+        $algorithm = $request->input('algorithm');
 
         $vectorX = [$style, $average, $gender];
 
-        return Euclidean::euclidean($vectorX, $students);
+        if (strcmp($algorithm, "nbayes") !== 0)
+            return NaiveBayes::nBayes($students, 'campus', $vectorX, 'students');
+        else
+            return Euclidean::euclidean($vectorX, $students);
     }
 
     /**
@@ -58,9 +63,14 @@ class StudentController extends Controller
         $style = $request->input('style');
         $campus = $request->input('campus');
         $average = $request->input('average');
+        $algorithm = $request->input('algorithm');
 
         $vectorX = [$style, $campus, $average];
-        $gender = Euclidean::euclidean($vectorX, $students);
+
+        if (strcmp($algorithm, "nbayes") !== 0)
+            $gender = NaiveBayes::nBayes($students, 'gender', $vectorX, 'students');
+        else
+            $gender = Euclidean::euclidean($vectorX, $students);
 
         return ($gender == "M")? "Masculino": "Femenino";
     }

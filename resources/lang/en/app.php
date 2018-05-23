@@ -90,6 +90,8 @@ return [
     'title' => 'Information',
     'descr' => 'If you do not know your learning style, you can take the test ',
     'link' => 'here'
-  ]
+  ],
+  "euclidean" => "Euclidean distances",
+  "algo-label" => "Choose the algorithm you want to use",
 
 ];

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Euclidean;
+use NaiveBayes;
 
 class NetworkController extends Controller
 {
@@ -32,9 +33,13 @@ class NetworkController extends Controller
         $net_links = $request->input('net_links');
         $capacity = $request->input('capacity');
         $cost = $request->input('cost');
+        $algorithm = $request->input('algorithm');
 
         $vectorX = [$reliability, $net_links, $capacity, $cost];
 
-        return Euclidean::euclidean($vectorX, $networks);
+        if (strcmp($algorithm, "nbayes") !== 0)
+            return NaiveBayes::nBayes($networks, 'class', $vectorX, 'networks');
+        else
+            return Euclidean::euclidean($vectorX, $networks);
     }
 }

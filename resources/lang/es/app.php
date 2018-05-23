@@ -90,6 +90,8 @@ return [
     'title' => 'Información',
     'descr' => 'Si no conoce su estilo de aprendizaje puede realizar el test ',
     'link' => 'aquí'
-  ]
+  ],
+  "euclidean" => "Distancias euclidianas",
+  "algo-label" => "Elige el algoritmo que quieres utilizar",
 
 ];

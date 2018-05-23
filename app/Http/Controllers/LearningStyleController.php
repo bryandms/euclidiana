@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Euclidean;
+use NaiveBayes;
 use Session;
 
 class LearningStyleController extends Controller
@@ -140,10 +141,14 @@ class LearningStyleController extends Controller
         $or = $request->input('or');
         $ca = $request->input('ca');
         $ea = $request->input('ea');
+        $algorithm = $request->input('algorithm');
 
         $vectorX = [$ec, $or, $ca, $ea];
 
-        return Euclidean::euclidean($vectorX, $styles);
+        if (strcmp($algorithm, "nbayes") !== 0)
+            return NaiveBayes::nBayes($styles, 'style', $vectorX, 'learning_styles');
+        else
+            return Euclidean::euclidean($vectorX, $styles);
     }
 
     /**
@@ -160,9 +165,13 @@ class LearningStyleController extends Controller
         $campus = $request->input('campus');
         $gender = $request->input('gender');
         $average = $request->input('average');
+        $algorithm = $request->input('algorithm');
 
         $vectorX = [$campus, $gender, $average];
 
-        return Euclidean::euclidean($vectorX, $styles);
+        if (strcmp($algorithm, "nbayes") !== 0)
+            return NaiveBayes::nBayes($styles, 'style', $vectorX, 'students');
+        else
+            return Euclidean::euclidean($vectorX, $styles);
     }
 }

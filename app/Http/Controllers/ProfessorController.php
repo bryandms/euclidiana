@@ -30,7 +30,7 @@ class ProfessorController extends Controller
      */
     public function getProfessor(Request $request)
     {
-        $networks = DB::table('professors')
+        $professors = DB::table('professors')
             ->select('age', 'gender', 'experience', 'course_times', 'discipline',
             'skills_using_pc', 'skills_using_web_tech', 'skills_using_web_sites', 'type'
             )->get();
@@ -44,12 +44,16 @@ class ProfessorController extends Controller
         $skills_using_pc = $request->input('F');
         $skills_using_web_tech = $request->input('G');
         $skills_using_web_sites = $request->input('H');
+        $algorithm = $request->input('algorithm');
 
         $vectorX = [
             $age, $gender, $experience, $course_times, $discipline, $skills_using_pc,
             $skills_using_web_tech, $skills_using_web_sites
         ];
 
-        return Euclidean::euclidean($vectorX, $networks);
+        if (strcmp($algorithm, "nbayes") !== 0)
+            return NaiveBayes::nBayes($professors, 'type', $vectorX, 'professors');
+        else
+            return Euclidean::euclidean($vectorX, $professors);
     }
 }
