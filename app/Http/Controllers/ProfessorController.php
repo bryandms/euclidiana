@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Euclidean;
 use NaiveBayes;
-// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
-// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
-// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
-// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
-// NOTAAAAAA: en la columna F a la hora de obtener la I hay que castearla o convertirla a un A de average
 
 class ProfessorController extends Controller
 {
@@ -45,6 +40,9 @@ class ProfessorController extends Controller
         $skills_using_web_tech = $request->input('G');
         $skills_using_web_sites = $request->input('H');
         $algorithm = $request->input('algorithm');
+
+        if ( strcmp($skills_using_pc, 'I') == 0 )
+            $skills_using_pc = 'A';
 
         $vectorX = [
             $age, $gender, $experience, $course_times, $discipline, $skills_using_pc,

@@ -7,12 +7,16 @@ use Illuminate\Support\Facades\Cache;
 class NaiveBayes
 {
   static protected $dataset;
+  static protected $cat;
   static protected $category;
   static protected $categories;
   static protected $instanceCategory;
   static protected $element;
   static protected $tableName;
   static protected $features = array();
+  static protected $expiresAt;
+  static protected $i;
+  static protected $feature;
 
   /**
    * Initializes some global variables and returns the category
@@ -33,6 +37,7 @@ class NaiveBayes
     self::$category = $category;
     self::$element = $element;
     self::$tableName = $tableName;
+    self::$expiresAt = now()->addYear(1);
     
     NaiveBayes::loadCategotyData();
 
@@ -99,11 +104,15 @@ class NaiveBayes
    */
   public static function loadCategotyData()
   {
-    $query = DB::table(self::$tableName)
+    $key = 'load_categoty_data_' . self::$tableName . '_' . self::$category;
+
+    $query = Cache::remember($key, self::$expiresAt, function () {
+      return DB::table(self::$tableName)
                   ->select(self::$category, DB::raw('count(*) as total'))
                   ->groupBy(self::$category)
                   ->pluck('total', self::$category)->all();
-    
+    });
+
     [$categories] = array_divide($query);
     
     self::$instanceCategory = $query;
@@ -115,6 +124,7 @@ class NaiveBayes
    * feature indicated in a category.
    *
    * @param String $cat
+   * 
    * @return array $instances Number of instances of each category of the class.
    */
   public static function instances($cat)
@@ -122,11 +132,19 @@ class NaiveBayes
     $instances = array();
 
     for ($i=0; $i < count(self::$features)-1; $i++) {
-      $instancesNumber = DB::table(self::$tableName)
-                              ->where([
-                                [self::$features[$i], self::$element[$i]],
-                                [last(self::$features), $cat],
-                              ])->get()->count();
+      
+      $key = 'instances_' . self::$tableName . '_' . last(self::$features) . 
+              '_' . self::$features[$i] . '_' . self::$element[$i] . '_' . $cat;
+      self::$cat = $cat;
+      self::$i = $i;
+      
+      $instancesNumber = Cache::remember($key, self::$expiresAt, function () {
+        return DB::table(self::$tableName)
+                    ->where([
+                      [self::$features[self::$i], self::$element[self::$i]],
+                      [last(self::$features), self::$cat],
+                    ])->get()->count();
+      });
 
       array_push($instances, $instancesNumber);
     }
@@ -143,31 +161,42 @@ class NaiveBayes
    */
   public static function priorProbability($category)
   {
-    $totalCategoryRecords = DB::table(self::$tableName)
-                                  ->where(self::$category, $category)
-                                  ->count();
-    $totalRecords = DB::table(self::$tableName)->count();
-    $probability = $totalCategoryRecords / $totalRecords;
+    $key = 'prior_probability_' . self::$tableName . '_' . self::$category . 
+            '_' . $category;
+    self::$cat = $category;
 
-    return $probability;
+    return Cache::remember($key, self::$expiresAt, function () {
+      $totalCategoryRecords = DB::table(self::$tableName)
+                                  ->where(self::$category, self::$cat)
+                                  ->count();
+      $totalRecords = DB::table(self::$tableName)->count();
+
+      return $totalCategoryRecords / $totalRecords;
+    });
   }
 
   /**
-   * Calculate the probalities of a value for each of the features.
+   * Calculate the probabilities of a value for each of the features.
    * Load the global features variable with the available features
    * for the classification indicated by the global variable tableName.
    *
-   * @return void
+   * @return array Probabilities of a value for each of the features.
    */
   public static function calculateProbs()
   {
     $probs = array();
 
     foreach (self::$dataset->first() as $feature => $value) {
-      $occurrFeature = DB::table(self::$tableName)
-                            ->select($feature)
-                            ->distinct()
-                            ->get()->count();
+      
+      self::$feature = $feature;
+      $key = 'calculate_probs_' . self::$tableName . '_' . $feature;
+
+      $occurrFeature = Cache::remember($key, self::$expiresAt, function () {
+        return DB::table(self::$tableName)
+                    ->select(self::$feature)
+                    ->distinct()
+                    ->get()->count();
+      });
 
       array_push(self::$features, $feature);
       array_push($probs, 1 / $occurrFeature);
