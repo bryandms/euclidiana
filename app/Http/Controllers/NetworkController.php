@@ -37,7 +37,7 @@ class NetworkController extends Controller
 
         $vectorX = [$reliability, $net_links, $capacity, $cost];
 
-        if (strcmp($algorithm, "nbayes") !== 0)
+        if (strcmp($algorithm, "nbayes") == 0)
             return NaiveBayes::nBayes($networks, 'class', $vectorX, 'networks');
         else
             return Euclidean::euclidean($vectorX, $networks);

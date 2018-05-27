@@ -49,7 +49,7 @@ class ProfessorController extends Controller
             $skills_using_web_tech, $skills_using_web_sites
         ];
 
-        if (strcmp($algorithm, "nbayes") !== 0)
+        if (strcmp($algorithm, "nbayes") == 0)
             return NaiveBayes::nBayes($professors, 'type', $vectorX, 'professors');
         else
             return Euclidean::euclidean($vectorX, $professors);

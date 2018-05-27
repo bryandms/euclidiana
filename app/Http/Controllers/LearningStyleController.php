@@ -145,7 +145,7 @@ class LearningStyleController extends Controller
 
         $vectorX = [$ec, $or, $ca, $ea];
 
-        if (strcmp($algorithm, "nbayes") !== 0)
+        if (strcmp($algorithm, "nbayes") == 0)
             return NaiveBayes::nBayes($styles, 'style', $vectorX, 'learning_styles');
         else
             return Euclidean::euclidean($vectorX, $styles);
@@ -169,7 +169,7 @@ class LearningStyleController extends Controller
 
         $vectorX = [$campus, $gender, $average];
 
-        if (strcmp($algorithm, "nbayes") !== 0)
+        if (strcmp($algorithm, "nbayes") == 0)
             return NaiveBayes::nBayes($styles, 'style', $vectorX, 'students');
         else
             return Euclidean::euclidean($vectorX, $styles);

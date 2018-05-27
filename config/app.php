@@ -216,6 +216,7 @@ return [
 
         'Euclidean' => App\Helpers\Algorithm\Euclidean::class,
         'NaiveBayes' => App\Helpers\Algorithm\NaiveBayes::class,
+        'StaticData' => App\Helpers\StaticData::class,
 
     ],
 

@@ -2,6 +2,8 @@
 
 namespace App\Helpers\Algorithm;
 
+use App\Helpers\StaticData;
+
 class Euclidean
 {
   /**
@@ -22,11 +24,11 @@ class Euclidean
     foreach($vectorY as $current)
     {
       $value = 0;
-      $current = Euclidean::getValues($current);
+      $current = array_values((array) $current);
 
       for($i = count($vectorX) - 1; $i >= 0; $i--)
       {
-        $value += pow( Euclidean::strValue($vectorX[$i]) - Euclidean::strValue($current[$i]), 2 );
+        $value += pow( StaticData::strValue($vectorX[$i]) - StaticData::strValue($current[$i]), 2 );
       }
 
       $value = sqrt($value);
@@ -40,67 +42,5 @@ class Euclidean
         }
     }
     return $result;
-  }
-
-  /**
-   * Get the values of an array or associative collection.
-   * 
-   * @param array Arrangement or collection to obtain its values.
-   * @return array Values of an associative arrangement.
-   */
-  public static function getValues($collection)
-  {
-    $collection = (array) $collection;
-    [$keys, $values] = array_divide($collection);
-    
-    return $values;
-  }
-
-  /**
-   * Gets a numeric value for a string.
-   * 
-   * @param string String to get its value.
-   * @return float/int String's value.
-   */
-  public static function strValue($string)
-  {
-    switch ($string)
-    {
-      case 'Beginner':
-      case 'DM':
-      case 'F':
-      case 'Paraiso':
-      case 'Low':
-      case 'L':
-      case 'N':
-      case 'B':
-      case 'CONVERGENTE':
-        return 1;
-      
-      case 'Intermediate':
-      case 'ND':
-      case 'M':
-      case 'I':
-      case 'S':
-      case 'Turrialba':
-      case 'Medium':
-      case 'DIVERGENTE':
-        return 2;
-
-      case 'Advanced':
-      case 'O':
-      case 'NA':
-      case 'High':
-      case 'H':
-      case 'A':
-      case 'ACOMODADOR':
-        return 3;
-      
-      case 'ASIMILADOR':
-        return 4;
-
-      default:
-        return floatval($string);
-    }
   }
 }

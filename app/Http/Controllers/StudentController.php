@@ -43,7 +43,7 @@ class StudentController extends Controller
 
         $vectorX = [$style, $average, $gender];
 
-        if (strcmp($algorithm, "nbayes") !== 0)
+        if (strcmp($algorithm, "nbayes") == 0)
             return NaiveBayes::nBayes($students, 'campus', $vectorX, 'students');
         else
             return Euclidean::euclidean($vectorX, $students);
@@ -67,7 +67,7 @@ class StudentController extends Controller
 
         $vectorX = [$style, $campus, $average];
 
-        if (strcmp($algorithm, "nbayes") !== 0)
+        if (strcmp($algorithm, "nbayes") == 0)
             $gender = NaiveBayes::nBayes($students, 'gender', $vectorX, 'students');
         else
             $gender = Euclidean::euclidean($vectorX, $students);
